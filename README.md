@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Solana-token-mint
+
+This website lets users create Associated Token Account for wallet address of their choice as well as mint any wallet address SPL tokens they have authority over. 
+## Creating users Associated Token Accounts
+![Screenshot 2024-08-09 170453](https://github.com/user-attachments/assets/64bb16e0-431f-42b2-bb74-4dca7451e413)
+
+## Mint tokens to users
+
+![Screenshot 2024-08-09 170457](https://github.com/user-attachments/assets/40756c6c-f75e-48f6-9bbb-011e17b14011)
+
+
 
 ## Getting Started
 
