@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         coal: "#111111",
         metal: "#333333",
+        midnight: "#0c1017",
+        lilac: "#cf9fff",
       },
     },
   },

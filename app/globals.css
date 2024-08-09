@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white;
+  @apply bg-midnight;
 }
 
 @layer utilities {

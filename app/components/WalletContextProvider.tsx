@@ -6,13 +6,14 @@ import {
 } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
+  SolflareWalletAdapter,
   AlphaWalletAdapter,
   LedgerWalletAdapter,
-  SolflareWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { FC, useMemo } from "react";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
+import { clusterApiUrl } from "@solana/web3.js";
 
 type Props = {
   children?: React.ReactNode;
@@ -20,7 +21,7 @@ type Props = {
 
 export const WalletContextProvider: FC<Props> = ({ children }) => {
   //input your RPC as your endpoint value
-  const endpoint = "https://api-devnet.helius.xyz";
+  const endpoint = clusterApiUrl("devnet");
 
   const wallets = useMemo(
     () => [
@@ -33,7 +34,7 @@ export const WalletContextProvider: FC<Props> = ({ children }) => {
 
   return (
     <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect={true}>
+      <WalletProvider wallets={wallets}>
         <WalletModalProvider>{children}</WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

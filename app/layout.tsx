@@ -3,6 +3,7 @@ import { Orbitron } from "next/font/google";
 import "./globals.css";
 import { WalletContextProvider } from "./components/WalletContextProvider";
 import { AppBar } from "./components/AppBar";
+import SolanaBalance from "./components/SolanaBalance";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={orbitron.className}>
         <WalletContextProvider>
           <AppBar />
+          <SolanaBalance />
           {children}
         </WalletContextProvider>
       </body>
