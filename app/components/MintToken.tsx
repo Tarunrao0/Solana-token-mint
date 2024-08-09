@@ -17,6 +17,7 @@ export const MintToForm: FC = () => {
   const [balance, setBalance] = useState("");
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
+  const [confirmed, setConfirmed] = useState(false);
   const link = () => {
     return txSig
       ? `https://explorer.solana.com/tx/${txSig}?cluster=devnet`
@@ -52,6 +53,7 @@ export const MintToForm: FC = () => {
 
     setTxSig(signature);
     setTokenAccount(associatedToken.toString());
+    setConfirmed(true);
 
     const account = await getAccount(connection, associatedToken);
     setBalance(account.amount.toString());
@@ -99,10 +101,23 @@ export const MintToForm: FC = () => {
         </button>
       </form>
       {txSig ? (
-        <div>
-          <p>Token Balance: {balance} </p>
-          <p>View your transaction on </p>
-          <a href={link()}>Solana Explorer</a>
+        <div className="ml-44">
+          <p className="text-white">Token Balance: {balance} </p>
+          <div className="mt-4 text-white">
+            {confirmed ? (
+              <p className="w-full text-white">
+                You can view your transaction on Solana Explorer at:
+                <a
+                  href={`https://explorer.solana.com/tx/${txSig}?cluster=devnet`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-green-500 underline w-1/5 text-sm"
+                >
+                  View
+                </a>
+              </p>
+            ) : null}
+          </div>
         </div>
       ) : null}
     </div>

@@ -82,7 +82,7 @@ const CreateTokenAccount: FC = () => {
             </button>
           </form>
         </div>
-        <div className="max-w-lg mx-auto mt-4 text-black mr-20">
+        <div className=" mt-4 text-white mr-20">
           {confirmed ? (
             <p className="w-full">
               You can view your transaction on Solana Explorer at:
@@ -92,7 +92,7 @@ const CreateTokenAccount: FC = () => {
                 rel="noopener noreferrer"
                 className="block text-green-500 underline w-1/5 text-sm"
               >
-                {`https://explorer.solana.com/tx/${txSig}?cluster=devnet`}
+                View
               </a>
             </p>
           ) : null}

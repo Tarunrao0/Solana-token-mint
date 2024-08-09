@@ -20,8 +20,8 @@ const SolanaBalance: FC = () => {
   }, [connection, publicKey]);
 
   return (
-    <div className="ml-96 pt-10">
-      <p className="ml-72">
+    <div className="ml-96 pt-10 text-white">
+      <p className="ml-64">
         {publicKey ? `SOL Balance: ${balance / LAMPORTS_PER_SOL}` : ""}
       </p>
     </div>
